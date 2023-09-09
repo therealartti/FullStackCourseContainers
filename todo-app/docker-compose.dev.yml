@@ -6,8 +6,6 @@ services:
       dockerfile: dev.Dockerfile
     volumes:
       - ./todo-frontend:/usr/src/todo-frontend
-    ports:
-      - 3001:3000
     container_name: todo-front
   nginx:
     image: nginx:1.20.1
@@ -46,8 +44,6 @@ services:
       dockerfile: dev.Dockerfile
     volumes:
       - ./todo-backend:/usr/src/todo-backend 
-    ports:
-      - 3000:3000 
     container_name: todo-backend
     environment:
       - REDIS_URL=redis://redis:6379
